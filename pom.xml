@@ -20,14 +20,12 @@
     </build>
     <repositories>
         <repository>
-            <id>qe.syscolab.repo.core</id>
+            <id>qe.sysco.repo.core</id>
             <name>qe_core</name>
-            <url>http://qcenter.cake.net:8081/repository/qe.syscolab.repo.core/</url>
+            <url>http://10.168.135.194:8081/repository/sqe_repo</url>
             <releases>
-                <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -40,9 +38,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.syscolab.qe</groupId>
-            <artifactId>qe-core</artifactId>
-            <version>0.2.3</version>
+            <groupId>com.sysco.qe</groupId>
+            <artifactId>qe_core</artifactId>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
