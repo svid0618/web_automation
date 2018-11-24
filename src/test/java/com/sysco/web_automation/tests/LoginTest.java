@@ -41,7 +41,7 @@ public class LoginTest extends TestBase {
         Assert.assertEquals(Login.getUnsuccessfulLoginText(), unsuccessfulLoginMsg, "");
 
     }
-
+/*
     @Test(description = "", alwaysRun = true)
     public void testPlaceOrder() throws Exception {
         Login.loginToAthletesFoot(LoginData.email, LoginData.password);
@@ -78,5 +78,5 @@ public class LoginTest extends TestBase {
         Checkout.setCreditCardNumber(CheckoutData.creditCardNumber);
         Checkout.clickOnPlaceOrder();
         Assert.assertEquals(Checkout.getEnterValidCreditCardText().toUpperCase(), invalidCreditCardNumberMsg);
-    }
+    }*/
 }

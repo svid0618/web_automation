@@ -1,9 +1,8 @@
-<?xml version="1.0-SNAPSHOT" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0-SNAPSHOT.dtd" >
-<suite name="regression" verbose="1" configfailurepolicy="continue">
-    <test name="regression">
-        <packages>
-            <package name="com.sysco.web_automation.tests"/>
-        </packages>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" >
+    <test name="TestOne">
+        <classes>
+            <class name="com.sysco.web_automation.tests.LoginTest"/>
+        </classes>
     </test>
 </suite>
