@@ -33,16 +33,16 @@
     </repositories>
 
     <dependencies>
-        <dependency>
+ <!--       <dependency>
             <groupId>com.sysco.qe</groupId>
             <artifactId>syscoas400</artifactId>
             <version>1.0</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
-            <groupId>com.sysco.qe</groupId>
-            <artifactId>qe_core</artifactId>
-            <version>0.0.2</version>
+            <groupId>com.syscolab.qe</groupId>
+            <artifactId>qe-core</artifactId>
+            <version>0.2.3</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
