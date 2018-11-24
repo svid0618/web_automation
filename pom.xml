@@ -20,12 +20,14 @@
     </build>
     <repositories>
         <repository>
-            <id>qe.sysco.repo.core</id>
+            <id>qe.syscolab.repo.core</id>
             <name>qe_core</name>
-            <url>http://10.168.135.194:8081/repository/sqe_repo</url>
+            <url>http://qcenter.cake.net:8081/repository/qe.syscolab.repo.core/</url>
             <releases>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
