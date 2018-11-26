@@ -43,8 +43,11 @@ public class Checkout {
         paymentPage.selectPaymentOption(option);
     }
 
-    public static void setCreditCardNumber(String creditCardNumber) {
-        paymentPage.setCreditCardNumberText(creditCardNumber);
+    public static void fillMandatoryPaymentInformation(CheckoutData checkoutData) {
+        paymentPage.setCreditCardNumberText(checkoutData.creditCardNumber);
+        paymentPage.setExpirationMonth(checkoutData.expMonth);
+        paymentPage.setExpirationYear(checkoutData.expYear);
+        paymentPage.setCvv(checkoutData.cvv);
     }
 
     public static void clickOnPlaceOrder() {
@@ -53,6 +56,14 @@ public class Checkout {
 
     public static String getEnterValidCreditCardText() {
         return paymentPage.getEnterValidCreditCardText();
+    }
+
+    public static String getEnterValidExpDateTextInMonthField() {
+        return paymentPage.getEnterValidExpDateTextInMonthField();
+    }
+
+    public static String getEnterValidExpDateTextInYearField() {
+        return paymentPage.getEnterValidExpDateTextInYearField();
     }
 
     public static String getFirstName() {

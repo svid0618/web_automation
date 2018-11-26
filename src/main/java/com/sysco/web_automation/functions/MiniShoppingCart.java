@@ -15,10 +15,10 @@ public class MiniShoppingCart {
         if (miniShoppingCart.getAllDeleteButtonCount() != 0) {
             while (miniShoppingCart.getAllDeleteButtonCount() > 0) {
                 miniShoppingCart.clickOnDelete();
+                shoppingCartOverlay.clickOnOK();
                 if (shoppingCartOverlay.isDisplayedAttentionMessage()) {
                     shoppingCartOverlay.clickOnOK();
                 }
-                shoppingCartOverlay.clickOnOK();
                 miniShoppingCart.clickOnCloseButton();
                             }
         } else {

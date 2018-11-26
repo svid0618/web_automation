@@ -9,7 +9,7 @@ import static com.sysco.web_automation.pages.AthletesFootMyAccountPage.syscoLabU
  */
 public class AthletesFootMiniShoppingCart {
 
-    private By btnDelete = By.xpath("//a[@class='action delete']");   //todo check naming conventions
+    private By btnDelete = By.xpath("//a[@class='action delete']");
     private By btnClose = By.xpath("//div[@class='close']");
     private By btnViewCart = By.xpath("//span[contains(text(),'View Cart')]/parent::span/parent::a");
 
@@ -19,6 +19,7 @@ public class AthletesFootMiniShoppingCart {
 
     public void clickOnDelete() {
         syscoLabUIOgm.clickWithJavascript(btnDelete);
+        syscoLabUIOgm.sleep(2);
     }
 
     public void clickOnCloseButton() {

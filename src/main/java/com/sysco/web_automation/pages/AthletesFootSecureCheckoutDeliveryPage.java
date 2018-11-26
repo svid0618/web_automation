@@ -28,7 +28,8 @@ public class AthletesFootSecureCheckoutDeliveryPage {
 
     public void clickOnContinueButton() {
         syscoLabUIOgm.waitTillElementLoaded(btnContinue);
-        syscoLabUIOgm.clickWithJavascript(btnContinue);
+        syscoLabUIOgm.sleep(5);
+        syscoLabUIOgm.click(btnContinue);
     }
 
     public String getFirstNameText() {
@@ -77,5 +78,9 @@ public class AthletesFootSecureCheckoutDeliveryPage {
 
     public String getPhoneNumberIsRequiredText() {
         return syscoLabUIOgm.getText(phoneNumberFieldRequiredMsg);
+    }
+
+    public void sleepNoOfSeconds(int seconds){
+        syscoLabUIOgm.sleep(seconds);
     }
 }

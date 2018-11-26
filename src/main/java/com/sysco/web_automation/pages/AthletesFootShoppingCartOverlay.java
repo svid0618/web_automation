@@ -14,6 +14,7 @@ public class AthletesFootShoppingCartOverlay {
 
     public void clickOnOK() {
         syscoLabUIOgm.click(btnOK);
+        syscoLabUIOgm.sleep(2);
     }
 
     public boolean isDisplayedAttentionMessage(){
