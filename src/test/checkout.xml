@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Online_Shopping" verbose="1" >
+    <test name="Checkout">
+        <classes>
+            <class name="com.sysco.web_automation.tests.CheckoutTest"/>
+        </classes>
+    </test>
+</suite>

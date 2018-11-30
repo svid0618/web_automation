@@ -17,7 +17,7 @@ public class Login {
         if (Constants.RUN_LOCALLY) {
             DriverSetUpUtil.setToRunLocally();
             DesiredCapabilities capabilities = null;
-            athletesFootLoginPage.loadLoginPage(capabilities, "");
+            athletesFootLoginPage.loadLoginPage(capabilities, Constants.APP_URL + "");
         } else {
             athletesFootLoginPage.loadLoginPage(DriverSetUpUtil.setToRunRemotely(Constants.APP_OS), Constants.APP_URL);
         }

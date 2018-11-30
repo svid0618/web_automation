@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import java.util.Arrays;
 
 public class CheckoutTest extends TestBase {
 
@@ -19,7 +18,7 @@ public class CheckoutTest extends TestBase {
 
     @BeforeClass
     public void init(ITestContext iTestContext) {
-        iTestContext.setAttribute("feature", "Login - ValidLogin");
+        iTestContext.setAttribute("feature", "Online Shopping - Checkout_SS");
         MyAccount.loadMyAccountPage();
         Header.isDisplayedLoginButton();
         Header.navigateToLoginPage();
@@ -31,7 +30,6 @@ public class CheckoutTest extends TestBase {
         Login.clickOnLoginButton();
         Assert.assertEquals(Login.getEmailIsRequiredText(), requiredFieldMsg, "");
         Assert.assertEquals(Login.getPasswordIsRequiredText(), requiredFieldMsg, "");
-
         //enter invalid email format
         Login.loginToAthletesFoot(LoginData.invalidEmail, LoginData.invalidPassword);
         Assert.assertEquals(Login.getEmailIsRequiredText(), invalidEmailMsg, "");
@@ -52,21 +50,15 @@ public class CheckoutTest extends TestBase {
         Header.navigateToGivenCategory(HeaderData.category, HeaderData.subcategory);
         Category.clickOnProduct(CategoryData.productName);
         ShoeProduct.addProductToCart(ShoeProductData.size);
-        String productName = ShoeProduct.getProductName();
-        String productPrice = ShoeProduct.getProductPrice();
 
         Header.openSlideBarCart();
         MiniShoppingCart.clickOnViewCart();
-        Assert.assertEquals(ShoppingCart.getProductNameByRow(1), productName);
-        Assert.assertEquals(ShoppingCart.getProductPriceByRow(1), productPrice);
+        Assert.assertEquals(ShoppingCart.getProductNameByRow(1), ShoeProduct.getProductName());
+        Assert.assertEquals(ShoppingCart.getProductPriceByRow(1), ShoeProduct.getProductPrice());
         ShoppingCart.clickOnSecureCheckout();
 
-        Assert.assertEquals(Checkout.getFirstName().toUpperCase().trim(),
-                Arrays.asList(Header.getUsername().split(" ")[0])
-                        .toString().replace("[", "").replace("]", ""));
-        Assert.assertEquals(Checkout.getLastName().toUpperCase().trim(),
-                Arrays.asList(Header.getUsername().split(" ")[1])
-                        .toString().replace("[", "").replace("]", ""));
+        Assert.assertEquals(Checkout.getFirstName().toUpperCase().trim(), Header.getFirstName());
+        Assert.assertEquals(Checkout.getLastName().toUpperCase().trim(), Header.getLastName());
 
         Checkout.clickOnContinueButton();
         Assert.assertEquals(Checkout.getCityIsRequiredText().toUpperCase(), requiredFieldMsg);

@@ -17,9 +17,9 @@ public class MyAccount {
         if (Constants.RUN_LOCALLY) {
             DriverSetUpUtil.setToRunLocally();
             DesiredCapabilities capabilities = null;
-            athletesFootMyAccountPage.loadMyAccountPage(capabilities, Constants.APP_URL);
+            athletesFootMyAccountPage.loadMyAccountPage(capabilities, Constants.APP_URL + "customer/account/");
         } else {
-            athletesFootMyAccountPage.loadMyAccountPage(DriverSetUpUtil.setToRunRemotely(Constants.APP_OS), Constants.APP_URL);
+            athletesFootMyAccountPage.loadMyAccountPage(DriverSetUpUtil.setToRunRemotely(Constants.APP_OS), Constants.APP_URL + "customer/account/");
         }
     }
 

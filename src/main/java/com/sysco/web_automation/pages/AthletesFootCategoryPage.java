@@ -15,7 +15,7 @@ public class AthletesFootCategoryPage {
 
     public void clickOnProduct(String productName) throws InterruptedException {
         syscoLabUIOgm.scrollToElement(this.lnkProduct(productName));
-        Thread.sleep(2000);
+        syscoLabUIOgm.sleep(2);
         syscoLabUIOgm.clickWithJavascript(this.lnkProduct(productName));
     }
 }

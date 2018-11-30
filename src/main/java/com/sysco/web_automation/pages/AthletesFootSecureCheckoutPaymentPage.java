@@ -32,7 +32,6 @@ public class AthletesFootSecureCheckoutPaymentPage {
         syscoLabUIOgm.switchToDefaultFrame();
     }
 
-
     public void setExpirationMonth(String month) {
         syscoLabUIOgm.switchToFrame(frameExpMonth);
         syscoLabUIOgm.sendKeys(txtExpMonth, month);
