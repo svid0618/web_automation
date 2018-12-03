@@ -2,6 +2,9 @@ package com.sysco.web_automation.pages;
 
 import org.openqa.selenium.By;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.sysco.web_automation.pages.AthletesFootMyAccountPage.syscoLabUIOgm;
 
 /**
@@ -21,6 +24,7 @@ public class AthletesFootSecureCheckoutDeliveryPage {
     private By stateFieldRequiredMsg = By.xpath("//select[@name='region_id']/following-sibling::div");
     private By postCodeFieldRequiredMsg = By.xpath("//input[@name='postcode']/following-sibling::div");
     private By phoneNumberFieldRequiredMsg = By.xpath("//input[@name='telephone']/../div[2]/span");
+    private By lstDeliveryOptions = By.xpath("//*[@name='delivery_notes']/option");
 
     private By drpDwnPostCode(String descriptivePostCode) {
         return By.xpath(String.format("//a[contains(text(),'%s')]/parent::li", descriptivePostCode));
@@ -33,6 +37,7 @@ public class AthletesFootSecureCheckoutDeliveryPage {
     }
 
     public String getFirstNameText() {
+        syscoLabUIOgm.waitTillElementLoaded(txtFirstName);
         return syscoLabUIOgm.getAttribute(txtFirstName, "value");
     }
 
@@ -80,7 +85,11 @@ public class AthletesFootSecureCheckoutDeliveryPage {
         return syscoLabUIOgm.getText(phoneNumberFieldRequiredMsg);
     }
 
-    public void sleepNoOfSeconds(int seconds){
-        syscoLabUIOgm.sleep(seconds);
+    public List<String> getDeliveryOptions(){
+        return syscoLabUIOgm.findElements(lstDeliveryOptions)
+                .stream()
+                .filter(s -> !s.getText().equalsIgnoreCase(""))
+                .map(s -> s.getText())
+                .collect(Collectors.toList());
     }
 }
