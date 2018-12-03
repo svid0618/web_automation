@@ -4,6 +4,8 @@ import com.sysco.web_automation.data.CheckoutData;
 import com.sysco.web_automation.pages.AthletesFootSecureCheckoutDeliveryPage;
 import com.sysco.web_automation.pages.AthletesFootSecureCheckoutPaymentPage;
 
+import java.util.List;
+
 /**
  * Created by Subodhi on 17/11/18.
  */
@@ -72,5 +74,13 @@ public class Checkout {
 
     public static String getLastName() {
         return deliveryPage.getLastNameText();
+    }
+
+    public static List<String> getDeliveryOptions() {
+        return deliveryPage.getDeliveryOptions();
+    }
+
+    public static void quiteDriver() {
+        paymentPage.quitDriver();
     }
 }

@@ -69,4 +69,10 @@ public class AthletesFootSecureCheckoutPaymentPage {
     public void selectPaymentOption(String option) {
         syscoLabUIOgm.clickWithJavascript(this.rdBtnPaymentOption(option));
     }
+
+    public void quitDriver() {
+        if (syscoLabUIOgm != null) {
+            syscoLabUIOgm.quit();
+        }
+    }
 }

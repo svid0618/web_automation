@@ -31,6 +31,7 @@ public class AthletesFootHeader {
     }
 
     public String getUsername() {
+        syscoLabUIOgm.sleep(1);
         return syscoLabUIOgm.getText(lnkUsername);
     }
 
